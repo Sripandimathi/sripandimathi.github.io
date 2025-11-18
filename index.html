@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sripandimathi (ma) — Portfolio</title>
+  <meta name="description" content="Portfolio of Sripandimathi — aspiring data analyst / analyst-in-training" />
+  <!-- Simple, single-file portfolio. Replace placeholder text, links and project entries with your real content. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,var(--bg),#071024 150%);color:#e6eef8;padding:32px}
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#021124;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px}
+    .subtitle{color:var(--muted);margin-top:6px}
+
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    .section-title{font-weight:700;margin:0 0 12px 0}
+
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021124;font-weight:600;text-decoration:none}
+    .muted{color:var(--muted)}
+
+    ul.clean{list-style:none;padding:0;margin:0}
+    .skill{display:inline-block;margin:6px 8px;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);margin-bottom:12px}
+    .project h4{margin:0 0 6px 0}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:78px;height:78px;font-size:22px}}
+
+    /* small helper for contact form */
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">SP</div>
+      <div>
+        <h1>Sripandimathi <span style="font-weight:500;color:var(--muted);">(ma)</span></h1>
+        <div class="subtitle">Aspiring Data Analyst • Building practical analytics projects • Excel · SQL · Python</div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="#projects" style="opacity:0.95">Projects</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- main column -->
+      <main>
+        <section class="card" id="about">
+          <h2 class="section-title">About</h2>
+          <p class="muted">Hello — I'm <strong>Sripandimathi</strong> (you can call me <em>ma</em>) — a curious learner focused on analytics and solving problems with data. I enjoy turning messy data into clear insights and building small projects to sharpen my skills.</p>
+          <p class="muted"><strong>Hobbies & interests:</strong> Reading books, learning new skills, and learning analytical tools.</p>
+        </section>
+
+        <section class="card" id="projects" style="margin-top:16px">
+          <h2 class="section-title">Selected Projects</h2>
+
+          <div class="project">
+            <h4>1) IMDb Scraper & Dashboard</h4>
+            <p class="muted">Built a web-scraper to collect movie metadata, cleaned the data and created an interactive dashboard. Tools used: Python (requests, BeautifulSoup), pandas, Excel/Google Sheets.</p>
+            <p class="muted"><strong>Highlights:</strong> Pagination handling, exporter to Excel, filters for condition/status.</p>
+          </div>
+
+          <div class="project">
+            <h4>2) E‑commerce Product Analyzer (Demo)</h4>
+            <p class="muted">Analyzed product listings to extract seller information and product attributes. Implemented basic filtering and export to Excel for downstream analysis.</p>
+          </div>
+
+          <div class="project">
+            <h4>3) Internship Screening Task — Analytics & Insights</h4>
+            <p class="muted">Completed market research and produced concise recommendations and a data-backed slide summary.</p>
+          </div>
+
+          <p class="muted" style="margin-top:8px">Tip: Replace the descriptions above with links to live demos, GitHub repos, or screenshots for stronger impact.</p>
+        </section>
+
+        <section class="card" id="experience" style="margin-top:16px">
+          <h2 class="section-title">Experience & Education</h2>
+          <p class="muted"><strong>Current focus:</strong> Building analytics projects, improving Excel/SQL/Python skills, preparing for data analyst roles.</p>
+          <p class="muted"><strong>Education:</strong> MBA (please edit to match exact degree & college)</p>
+        </section>
+
+        <section class="card" id="contact" style="margin-top:16px">
+          <h2 class="section-title">Contact</h2>
+          <p class="muted">Email: <a href="mailto:your.email@example.com" style="color:var(--accent);text-decoration:none">your.email@example.com</a> — replace with your email.</p>
+
+          <form onsubmit="event.preventDefault(); sendMessage();" style="margin-top:12px">
+            <input id="name" placeholder="Your name" required />
+            <input id="email" placeholder="Your email" style="margin-top:8px" required />
+            <textarea id="message" rows="4" placeholder="Message" style="margin-top:8px" required></textarea>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <button class="btn" type="submit">Send</button>
+              <a class="btn" href="#" onclick="downloadHTML();return false;">Download HTML</a>
+            </div>
+            <p id="sent" style="margin-top:8px;color:var(--muted);display:none">(This form is static — clicking Send will show a preview message.)</p>
+          </form>
+        </section>
+
+      </main>
+
+      <!-- side column -->
+      <aside>
+        <div class="card">
+          <h3 class="section-title">Skills</h3>
+          <div style="margin-top:8px">
+            <span class="skill">Excel</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Python (pandas)</span>
+            <span class="skill">Web scraping</span>
+            <span class="skill">Data cleaning</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3 class="section-title">Quick Links</h3>
+          <ul class="clean" style="margin-top:6px">
+            <li><a href="#projects" class="muted">Projects</a></li>
+            <li><a href="#about" class="muted">About</a></li>
+            <li><a href="#contact" class="muted">Contact</a></li>
+            <li><a href="#" class="muted">GitHub (replace link)</a></li>
+            <li><a href="#" class="muted">LinkedIn (replace link)</a></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px; text-align:center">
+          <h3 class="section-title">Interests</h3>
+          <p class="muted">Reading books • Learning new skills • Learning analytical tools</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Made with care • © <span id="year"></span> Sripandimathi (ma)</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMessage(){
+      document.getElementById('sent').style.display = 'block';
+      document.getElementById('sent').textContent = 'Thank you — this is a static demo. Replace the form action with your backend or mailto to receive messages.';
+    }
+
+    function downloadHTML(){
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sripandimathi-portfolio.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
