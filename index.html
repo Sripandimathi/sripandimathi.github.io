@@ -4,10 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sripandimathi N — Portfolio</title>
-  <meta name="description" content="Portfolio of Sripandimathi — aspiring data analyst / analyst-in-training" />
-
+  <meta name="description" content="Portfolio of Sripandimathi — Data Analyst" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --bg: #020617;
@@ -18,161 +16,275 @@
       color-scheme: dark;
     }
     *{box-sizing:border-box}
-    html,body{background:radial-gradient(circle at top right,#0ea5e9,#020617 70%);color:#e6eef8;padding:32px;font-family:Inter,sans-serif}
-    .container{max-width:980px;margin:0 auto}
-    header{display:flex;align-items:center;gap:40px;padding:50px 30px;background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:20px;margin-top:70px;box-shadow:0 8px 28px rgba(0,0,0,0.4)}
-    h1{margin:0;font-size:42px;font-weight:800}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021124;font-weight:600;text-decoration:none}
+    html,body{
+      background:radial-gradient(circle at top right,#0ea5e9,#020617 70%);
+      color:#e6eef8;padding:28px;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    }
+    .container{max-width:1000px;margin:0 auto}
+    header{
+      display:flex;align-items:center;gap:28px;padding:44px 28px;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      border-radius:18px;margin-top:34px;box-shadow:0 12px 30px rgba(2,6,23,0.55);
+      animation:fadeIn 0.9s cubic-bezier(.2,.9,.3,1);
+    }
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+    h1{margin:0;font-size:40px;font-weight:800}
     .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021124;font-weight:700;text-decoration:none}
     .grid{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:20px}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
-    .section-title{font-weight:700;margin:0 0 12px 0}
-    .skill{display:inline-block;margin:6px 8px;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600}
-    ul.clean{list-style:none;padding:0;margin:0}
-    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
-    svg{width:22px;height:22px;fill:#38bdf8;transition:0.3s}
-    svg:hover{fill:white;transform:scale(1.14)}
-    @media (max-width:880px){.grid{grid-template-columns:1fr;}header{flex-direction:column;text-align:center}}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}.header-right{min-width:0;text-align:center}}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 26px rgba(2,6,23,0.45);animation:fadeInUp .9s ease}
+    @keyframes fadeInUp{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+    .section-title{font-weight:700;margin:0 0 12px 0;color:var(--accent)}
+    .skill{display:inline-block;margin:6px 8px;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:700}
+    .neon{padding:8px 14px;border-radius:999px;border:2px solid #38bdf8;box-shadow:0 0 18px #38bdf8,inset 0 0 10px rgba(56,189,248,0.12);color:#e0f7ff;font-weight:700}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);margin-bottom:12px}
+    .project h4{margin:0 0 6px 0}
+    .carousel{white-space:nowrap;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px}
+    .carousel-card{display:inline-block;width:260px;margin-right:12px;background:var(--glass);padding:18px;border-radius:12px}
+    .project-img{width:100%;height:150px;border-radius:10px;object-fit:cover;margin-top:10px;box-shadow:0 8px 24px rgba(2,6,23,0.4)}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    .icon-btn{display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none}
+    svg{width:20px;height:20px;fill:#38bdf8;transition:transform .18s, fill .18s}
+    svg:hover{transform:scale(1.08);fill:#ffffff}
+    .small-muted{color:var(--muted);font-size:14px}
+    /* responsive */
+    @media (max-width:680px){
+      header{flex-direction:column;padding:26px}
+      header > div.header-right{width:100%}
+      header img{width:160px;height:160px}
+      h1{font-size:28px}
+    }
   </style>
 </head>
-
 <body>
   <div class="container">
 
+    <!-- HERO -->
     <header>
-      <!-- Left: Photo -->
-      <div style="width:260px;height:260px;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.6)">
-        <img src="portfolio.jpeg" alt="Profile Photo" style="width:100%;height:100%;object-fit:cover" />
+      <div style="width:260px;height:260px;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.6)">
+        <img src="portfolio.jpeg" alt="Profile Photo" style="width:100%;height:100%;object-fit:cover;display:block" />
       </div>
 
-      <!-- Right: Intro -->
-      <div style="flex:1">
+      <div class="header-right" style="flex:1;min-width:200px">
         <h1>Sripandimathi N</h1>
-        <div class="muted" style="font-size:20px">Data Analyst • Python • Power BI • Excel • SQL</div>
+        <div class="small-muted" style="margin-top:8px;font-size:18px">DATA ANALYST • Python • Power BI • Excel • SQL</div>
 
-        <p class="muted" style="margin-top:12px;max-width:600px">
-          Aspiring Data Analyst skilled in Python-based data analysis, web scraping, Excel analytics, and building interactive dashboards using Power BI. Passionate about transforming data into meaningful insights.
+        <p class="muted" style="margin-top:12px;max-width:720px;line-height:1.6">
+          Aspiring data analyst with a solid foundation in Python programming, data scraping, and interactive dashboard creation using Power BI. Proficient in collecting, cleaning, and visualizing data to uncover actionable insights. Completed personal projects involving website data extraction and dynamic reporting dashboards. Seeking an entry-level opportunity to apply analytical skills and grow as a data professional.
         </p>
 
-        <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap">
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
           <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="Sripandimathi1.pdf" download>Download Resume</a>
+          <a class="btn" href="sripandimathi1.pdf" download>Download Resume</a>
 
-          <!-- LinkedIn Icon -->
-          <a href="https://linkedin.com/in/sripandimathi-nagapandian-513651208" target="_blank" title="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.68H4.7V24H.22V8.68zM7.98 8.68h4.3v2.09h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 2.86 5.39 6.58V24h-4.48v-7.93c0-1.89-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.19V24H7.98V8.68z"/>
-            </svg>
+          <!-- LinkedIn -->
+          <a class="icon-btn" href="https://linkedin.com/in/sripandimathi-nagapandian-513651208" target="_blank" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.68H4.7V24H.22V8.68zM7.98 8.68h4.3v2.09h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 2.86 5.39 6.58V24h-4.48v-7.93c0-1.89-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.19V24H7.98V8.68z"/></svg>
+            <span style="font-weight:700;color:var(--muted);font-size:13px">LinkedIn</span>
           </a>
 
-          <!-- GitHub Icon -->
-          <a href="https://github.com/Sripandimathi" target="_blank" title="GitHub">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.31-1.73-1.31-1.73-1.07-.74.08-.73.08-.73 1.18.08 1.8 1.22 1.8 1.22 1.05 1.82 2.75 1.29 3.42.99.11-.76.41-1.29.75-1.59-2.55-.29-5.23-1.29-5.23-5.73 0-1.27.46-2.31 1.21-3.13-.12-.3-.53-1.51.12-3.15 0 0 1-.32 3.3 1.2a11.5 11.5 0 0 1 6 0c2.29-1.52 3.29-1.2 3.29-1.2.66 1.64.25 2.85.13 3.15.76.82 1.2 1.86 1.2 3.13 0 4.45-2.69 5.44-5.26 5.72.42.36.81 1.08.81 2.18 0 1.58-.02 2.85-.02 3.24 0 .31.21.68.8.56A10.53 10.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
-            </svg>
+          <!-- GitHub -->
+          <a class="icon-btn" href="https://github.com/Sripandimathi" target="_blank" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.31-1.73-1.31-1.73-1.07-.74.08-.73.08-.73 1.18.08 1.8 1.22 1.8 1.22 1.05 1.82 2.75 1.29 3.42.99.11-.76.41-1.29.75-1.59-2.55-.29-5.23-1.29-5.23-5.73 0-1.27.46-2.31 1.21-3.13-.12-.3-.53-1.51.12-3.15 0 0 1-.32 3.3 1.2a11.5 11.5 0 0 1 6 0c2.29-1.52 3.29-1.2 3.29-1.2.66 1.64.25 2.85.13 3.15.76.82 1.2 1.86 1.2 3.13 0 4.45-2.69 5.44-5.26 5.72.42.36.81 1.08.81 2.18 0 1.58-.02 2.85-.02 3.24 0 .31.21.68.8.56A10.53 10.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/></svg>
+            <span style="font-weight:700;color:var(--muted);font-size:13px">GitHub</span>
           </a>
         </div>
       </div>
     </header>
 
-    <!-- Main Grid -->
+    <!-- GRID -->
     <div class="grid">
 
-      <!-- Main Column -->
+      <!-- MAIN -->
       <main>
 
+        <!-- About -->
         <section class="card" id="about">
           <h2 class="section-title">About</h2>
           <p class="muted"><strong>SRIPANDIMATHI N</strong> — Data Analyst based in Chennai, India.</p>
           <p class="muted">
-            Aspiring data analyst with a strong foundation in Python, Power BI, Tableau basics, Excel, and data scraping. Skilled in cleaning, analyzing, and visualizing data to produce insights for decision-making.
+            Aspiring data analyst with a solid foundation in Python programming, data scraping, and interactive dashboard creation using Power BI. Proficient in collecting, cleaning, and visualizing data to uncover actionable insights.
           </p>
         </section>
 
+        <!-- Projects -->
         <section class="card" id="projects" style="margin-top:16px">
           <h2 class="section-title">Selected Projects</h2>
 
           <div class="project">
-            <h4>• Data Scraping from Websites using Python</h4>
-            <p class="muted">Extracted product data from e-commerce sites using BeautifulSoup & Requests. Exported structured data to Excel for analysis.</p>
+            <h4>IMDb Scraper & Dashboard</h4>
+            <p class="muted">Built a scraper to collect movie metadata, cleaned the data and created an interactive dashboard. Tools: Python (requests, BeautifulSoup), pandas, Excel/Google Sheets.</p>
+            <p class="muted"><strong>Highlights:</strong> Pagination handling, exporter to Excel, filters for status/condition.</p>
           </div>
 
           <div class="project">
-            <h4>• Deloitte Data Analytics Job Simulation</h4>
-            <p class="muted">Performed cleaning, analysis, and visualization using Tableau & Excel. Worked on real consulting-style tasks.</p>
+            <h4>E-commerce Product Analyzer (Demo)</h4>
+            <p class="muted">Analyzed product listings to extract seller information and product attributes. Implemented basic filtering and export to Excel for downstream analysis.</p>
           </div>
 
           <div class="project">
-            <h4>• Interactive Dashboard with Power BI</h4>
-            <p class="muted">Created dynamic dashboards using DAX measures, slicers, KPIs, and custom visuals.</p>
+            <h4>Internship Screening Task — Analytics & Insights</h4>
+            <p class="muted">Completed market research and produced concise recommendations and a data-backed slide summary.</p>
+          </div>
+
+        </section>
+
+        <!-- Dashboard Option 2 (Newer one) -->
+        <section class="card" id="visuals" style="margin-top:16px">
+          <h2 class="section-title">Data Analytics Visuals</h2>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <h4 class="small-muted">Power BI Dashboard Preview</h4>
+              <p class="muted">Showcase of interactive sales insights dashboard created using Power BI with slicers, DAX measures, and KPIs.</p>
+              <!-- image filename: dashboard_powerbi.png -->
+              <img src="dashboard_powerbi.png" alt="Power BI Dashboard" class="project-img" onerror="this.style.opacity=.35;this.style.filter='grayscale(60%)';">
+            </div>
+
+            <div>
+              <h4 class="small-muted">Python Data Analysis — Preview</h4>
+              <p class="muted">Sample visualization generated as part of product analytics using Python libraries (Matplotlib/Seaborn).</p>
+              <!-- image filename: dashboard_python.png -->
+              <img src="dashboard_python.png" alt="Python Chart" class="project-img" onerror="this.style.opacity=.35;this.style.filter='grayscale(60%)';">
+            </div>
+          </div>
+
+          <p class="muted" style="margin-top:10px">If images do not appear, upload <code>dashboard_powerbi.png</code> and <code>dashboard_python.png</code> to the same folder as this HTML.</p>
+        </section>
+
+        <!-- Resume timeline -->
+        <section class="card" id="resume" style="margin-top:16px">
+          <h2 class="section-title">Resume Timeline</h2>
+          <div style="border-left:3px solid var(--accent);padding-left:18px;margin-top:10px">
+            <div style="margin-bottom:16px">
+              <h3 style="margin:0;color:var(--accent)">Education</h3>
+              <h4>MBA — Prist University (2021–2023)</h4>
+              <p class="muted">Graduated with 88%.</p>
+
+              <h4>B.Sc (Mathematics) — Bon Secours College for Women (2018–2021)</h4>
+              <p class="muted">Graduated with 88%.</p>
+
+              <h4>HSC — Kalyanasundaram HSS (2017–2018)</h4>
+              <p class="muted">75%</p>
+
+              <h4>SSLC — Kalyanasundaram HSS (2015–2016)</h4>
+              <p class="muted">92%</p>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <h3 style="margin:0;color:var(--accent)">Projects</h3>
+              <h4>Data Scraping from Websites using Python</h4>
+              <p class="muted">Built scrapers using BeautifulSoup & Requests, cleaned data with pandas, exported to Excel.</p>
+
+              <h4>Deloitte Data Analytics Job Simulation</h4>
+              <p class="muted">Data cleaning, analysis & visualization using Tableau & Excel (Forage simulation).</p>
+
+              <h4>Interactive Dashboard with Power BI</h4>
+              <p class="muted">Designed interactive dashboards with DAX measures, slicers and KPIs.</p>
+
+              <h4>Emotional Intelligence Study</h4>
+              <p class="muted">MBA final year research project on emotional intelligence.</p>
+            </div>
+
+            <div>
+              <h3 style="margin:0;color:var(--accent)">Certifications</h3>
+              <ul class="muted">
+                <li>Data Science with Python – IBM</li>
+                <li>Deloitte Data Analytics Job Simulation – Forage</li>
+                <li>Data Analytics with Python, SQL & Power BI – Softlogic Systems</li>
+                <li>Senior Level Typewriting Certification (English)</li>
+                <li>Psychology Course — Understanding Human Behavior</li>
+                <li>HR Internship — Practical HR Exposure</li>
+                <li>Master Course in Business Idea Generation — Udemy</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        <section class="card" id="experience" style="margin-top:16px">
-          <h2 class="section-title">Education</h2>
-          <ul class="muted">
-            <li><strong>MBA</strong> — Prist University, Thanjavur (2021–2023), 88%</li>
-            <li><strong>B.Sc Mathematics</strong> — Bon Secours College for Women (2018–2021), 88%</li>
-            <li><strong>HSC</strong> — Kalyanasundaram HSS (2017–2018), 75%</li>
-            <li><strong>SSLC</strong> — Kalyanasundaram HSS (2015–2016), 92%</li>
-          </ul>
+        <!-- Project carousel -->
+        <section class="card" id="carousel" style="margin-top:16px">
+          <h2 class="section-title">Project Carousel</h2>
+          <div class="carousel" aria-hidden="false">
+            <div class="carousel-card">Python Web Scraping</div>
+            <div class="carousel-card">Power BI Dashboard</div>
+            <div class="carousel-card">Sales Insights Analysis</div>
+          </div>
         </section>
 
-        <section class="card" id="contact" style="margin-top:16px">
-          <h2 class="section-title">Contact</h2>
-          <p class="muted">📧 Email: <a href="mailto:sripandimathikalavathi@gmail.com" style="color:var(--accent)">sripandimathikalavathi@gmail.com</a></p>
-          <p class="muted">📞 Phone: +91 9789602053</p>
-          <p class="muted">📍 Location: Chennai, India</p>
-        </section>
       </main>
 
-      <!-- Side Column -->
+      <!-- ASIDE / SIDEBAR -->
       <aside>
         <div class="card">
           <h3 class="section-title">Skills</h3>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px">
-            <span class="skill">Python</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Excel</span>
-            <span class="skill">Tableau</span>
-            <span class="skill">Google Sheets</span>
-            <span class="skill">MySQL</span>
-            <span class="skill">Data Cleaning</span>
-            <span class="skill">Visualization</span>
+            <span class="neon">Python</span>
+            <span class="neon">Power BI</span>
+            <span class="neon">SQL</span>
+            <span class="neon">Excel</span>
+            <span class="neon">Tableau</span>
+            <span class="neon">Google Sheets</span>
+            <span class="neon">MySQL</span>
+            <span class="neon">Data Cleaning</span>
+            <span class="neon">Visualization</span>
           </div>
         </div>
 
         <div class="card" style="margin-top:16px">
           <h3 class="section-title">Quick Links</h3>
-          <ul class="clean">
+          <ul class="clean" style="margin-top:6px">
             <li><a href="#projects" class="muted">Projects</a></li>
             <li><a href="#about" class="muted">About</a></li>
             <li><a href="#contact" class="muted">Contact</a></li>
-
-            <li>
-              <a href="https://github.com/Sripandimathi" class="muted" target="_blank">
-                GitHub →
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/sripandimathi-nagapandian-513651208" class="muted" target="_blank">
-                LinkedIn →
-              </a>
-            </li>
+            <li><a href="https://github.com/Sripandimathi" target="_blank" class="muted">GitHub →</a></li>
+            <li><a href="https://linkedin.com/in/sripandimathi-nagapandian-513651208" target="_blank" class="muted">LinkedIn →</a></li>
           </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px;text-align:center">
+          <h3 class="section-title">Interests</h3>
+          <p class="muted">Reading books • Learning new skills • Learning analytical tools</p>
+        </div>
+
+        <div class="card" id="contact" style="margin-top:16px">
+          <h3 class="section-title">Contact</h3>
+          <p class="muted">📧 <a href="mailto:sripandimathikalavathi@gmail.com" style="color:var(--accent)">sripandimathikalavathi@gmail.com</a></p>
+          <p class="muted">📞 +91 9789602053</p>
+          <p class="muted">📍 Chennai, India</p>
+          <a class="btn" href="sripandimathi1.pdf" download style="display:inline-block;margin-top:8px">Download Resume</a>
         </div>
       </aside>
     </div>
 
     <footer>
-      <div>Made with care • © <span id="year"></span> Sripandimathi N</div>
+      <div style="text-align:center;color:var(--muted);margin-top:18px">Made with care • © <span id="year"></span> Sripandimathi N</div>
     </footer>
   </div>
 
   <script>
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
+    // Download HTML helper
+    function downloadHTML(){
+      const html = '<!doctype html>\\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sripandimathi-portfolio.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // form demo
+    function sendMessage(){
+      document.getElementById('sent').style.display = 'block';
+      document.getElementById('sent').textContent = 'Thank you — this is a static demo. Replace the form action with your backend or mailto to receive messages.';
+    }
+  </script>
 </body>
 </html>
